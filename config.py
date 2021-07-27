@@ -63,3 +63,16 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
+
+
+//database 
+const db = require('./config/connection')
+const collection = require('./config/collection')
+const saver = require('./database/filesaver')
+
+
+//DATABASE CONNECTION 
+db.connect((err) => {
+    if (err) { console.log('error connection db' + err); }
+    else { console.log('db connected'); }
+})
